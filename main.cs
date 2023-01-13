@@ -61,7 +61,7 @@ class Program
             price = price * EXTRALARGE;
         }
         double total = price * 1.13;
-        double tax = total - price; 
+        double tax = total - price;
         Console.WriteLine("Your cost before tax is: $" + price.ToString("0.00"));
         Console.WriteLine("\nThe amount you pay in tax is: $" + tax.ToString("0.00"));
         Console.WriteLine("\nThe total cost is: $" + total.ToString("0.00"));
