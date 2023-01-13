@@ -9,31 +9,72 @@ class Program
     public static void Main(string[] args)
     {
         //Explanation of the algorithm
-        Console.WriteLine("Students between 12 and 21 receive a discount to the museum on weekdays. Enter in your age and the day you're visiting the museum below ");
+        Console.WriteLine("welcome to Alex's Candy Store. Where we sell exactly three items, lollipops, candy bars, and gum");
         Console.WriteLine("");
-        Console.WriteLine("Please enter your age");
-        //Input for user’s age
-        int age = Convert.ToInt32(Console.ReadLine());
+
+      //explanation of the candy options
+        Console.WriteLine("Please make a selection");
+        Console.WriteLine("Enter 1 for a lollipop.");
+        Console.WriteLine("Enter 2 for a candybar.");
+        Console.WriteLine("Enter 3 for a pack of gum.");
+      
+        //Input for candy type
+        int type = Convert.ToInt32(Console.ReadLine());
+
+        //Explanation of the size options
         Console.WriteLine("");
-        Console.WriteLine("Please enter the day as a number(Monday being 1, and Sunday being 7)");
+        Console.WriteLine("Please select a size");
+        Console.WriteLine("Enter 1 for regular");
+        Console.WriteLine("Enter 2 for large");
+        Console.WriteLine("Enter 3 for extra large");
+      
         //Input for the day of the week
-        int day = Convert.ToInt32(Console.ReadLine());
+        int size = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("");
+
+
+        double price = 0;
+        double LOLLIPOP = 0.80;
+        double CANDYBAR = 1.50;
+        double HARDCANDY = 0.60;
+
+        double REGULAR = 1;
+        double LARGE = 1.5;
+        double EXTRALARGE = 2;
         //Process: Function to tell the user to restart if the number is more than 7
-        if (day > 7)
+        if (type == 1)
         {
-            Console.WriteLine("You have input something incorrectly. Please relaunch code.");
+           price = LOLLIPOP;
         }
-        else if ((age > 12 && age < 21) && (day != 6 && day != 7))
+        else if (type == 2)
         {
-            //If eligible output “Eligible”
-            Console.WriteLine("Eligible!");
+            price = HARDCANDY;
         }
         //If not eligible output “Not Eligible”
         else
         {
-            Console.WriteLine("Not Eligible!");
+            price = CANDYBAR;
         }
+        if (size == 1)
+        {
+          price = price * REGULAR;
+        }
+        else if (size == 1)
+        {
+          price = price * LARGE;
+        }
+        else
+        {
+          price = price * EXTRALARGE;
+        }
+
+        double total = price * 1.13;
+        double tax = total - price; 
+        
+        Console.WriteLine("Your cost before tax is: $" + price.ToString("0.00"));
+        Console.WriteLine("\nThe amount you pay in tax is: $" + tax.ToString("0.00"));
+        Console.WriteLine("\nThe total cost is: $" + total.ToString("0.00"));
+        
         Console.WriteLine("\nDone");
     }
 }
