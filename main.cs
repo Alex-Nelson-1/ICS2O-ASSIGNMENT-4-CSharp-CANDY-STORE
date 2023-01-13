@@ -24,7 +24,7 @@ class Program
         Console.WriteLine("Enter 1 for regular");
         Console.WriteLine("Enter 2 for large");
         Console.WriteLine("Enter 3 for extra large");
-        //Input variables for prices 
+        //Input for the candy's size 
         int size = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("");
         double price = 0;
